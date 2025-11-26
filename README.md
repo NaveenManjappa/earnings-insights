@@ -32,7 +32,7 @@ We use a standardized prompt to ensure consistency across all reports.
 -   Commit your changes (the new HTML file).
 -   Push to your fork and submit a Pull Request to the main repository.
 
-**Note:** You do not need to run the build script or update `js/manifest.js`. The build process will be run automatically upon PR approval to update the application registry.
+**Note:** You do not need to run the build script or update `js/manifest.js`. The build process will run automatically after your PR is merged to update the application registry.
 
 ## License
 
