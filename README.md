@@ -21,31 +21,18 @@ We use a standardized prompt to ensure consistency across all reports.
 
 1.  **Get the Transcript**: Obtain the text transcript of the earnings call you want to add.
 2.  **Use the Prompt**: Copy the content of [.github/Prompt.md](.github/Prompt.md).
-3.  **Generate HTML**: Paste the prompt and the transcript into an LLM (like ChatGPT, Claude, or Gemini). The model will generate a single HTML file with the transcript and analysis.
+3.  **Generate HTML**: Paste the prompt and the transcript into an LLM (like ChatGPT, Claude, or Gemini). The model will generate a single HTML file with the transcript and analysis. Make sure it included all the conversation from the transcript.
 4.  **Save the File**:
     -   Create a folder for the company in `companies/` if it doesn't exist (use a kebab-case slug, e.g., `reliance-industries`).
     -   Create a `concalls` folder inside the company folder.
     -   Save the generated HTML file as `YYYY-QX.html` (e.g., `2025-Q1.html`).
 
-### 2. Register the Data
+### 2. Submit a Pull Request
 
-To make the new report visible in the application, you need to update the manifest.
-
-1.  Open `js/app.js`.
-2.  Locate the `MANIFEST_DATA` object.
-3.  Add your new entry. If the company is new, add a new key. If it exists, append the quarter to the array.
-
-```javascript
-const MANIFEST_DATA = {
-    "rr-kabel": ["2026-Q2"],
-    "your-new-company": ["2025-Q1"] // Add your entry here
-};
-```
-
-### 3. Submit a Pull Request
-
--   Commit your changes (the new HTML file and the updated `app.js`).
+-   Commit your changes (the new HTML file).
 -   Push to your fork and submit a Pull Request to the main repository.
+
+**Note:** You do not need to run the build script or update `js/manifest.js`. The build process will be run automatically upon PR approval to update the application registry.
 
 ## License
 

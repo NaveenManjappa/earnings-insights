@@ -1,0 +1,10 @@
+{
+  "name": "earnings-insights",
+  "version": "1.0.0",
+  "description": "Earnings Insights - Quarterly Concall Analysis",
+  "scripts": {
+    "build": "node scripts/generate-manifest.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
