@@ -6,5 +6,8 @@ window.MANIFEST_DATA = {
     ],
     "rr-kabel": [
         "2026-Q2"
+    ],
+    "xpro-india-ltd": [
+        "2025-Q4"
     ]
 };
