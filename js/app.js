@@ -1,0 +1,242 @@
+/**
+ * Earnings Insights - Main Application
+ * Auto-discovers companies from folder structure and displays quarterly concall insights
+ */
+
+// Known abbreviations that should always be uppercase
+const KNOWN_ABBREVIATIONS = ['hdfc', 'icici', 'hcl', 'tcs', 'itc', 'sbi', 'lic', 'ntpc', 'ongc', 'ioc', 'bpcl', 'hpcl'];
+
+// Embedded manifest data (fallback for file:// protocol)
+const MANIFEST_DATA = {
+    
+    "rr-kabel": ["2026-Q2"]
+};
+
+// State
+let companies = [];
+
+/**
+ * Convert folder slug to display name
+ * Examples:
+ *   "reliance-industries" → "Reliance Industries"
+ *   "tcs" → "TCS"
+ *   "hdfc-bank" → "HDFC Bank"
+ */
+function formatCompanyName(slug) {
+    return slug
+        .split('-')
+        .map(word => {
+            const lowerWord = word.toLowerCase();
+            // Check if it's a known abbreviation
+            if (KNOWN_ABBREVIATIONS.includes(lowerWord)) {
+                return word.toUpperCase();
+            }
+            // If word is 3 chars or less and all letters, make uppercase
+            if (word.length <= 3 && /^[a-zA-Z]+$/.test(word)) {
+                return word.toUpperCase();
+            }
+            // Otherwise capitalize first letter
+            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        })
+        .join(' ');
+}
+
+/**
+ * Group quarters by year
+ * Input: ["2024-Q2", "2024-Q3", "2025-Q1"]
+ * Output: { "2025": ["Q1"], "2024": ["Q3", "Q2"] }
+ */
+function groupQuartersByYear(quarters) {
+    const grouped = {};
+    
+    quarters.forEach(quarter => {
+        const [year, q] = quarter.split('-');
+        if (!grouped[year]) {
+            grouped[year] = [];
+        }
+        grouped[year].push(q);
+    });
+    
+    // Sort quarters within each year (Q4, Q3, Q2, Q1)
+    Object.keys(grouped).forEach(year => {
+        grouped[year].sort((a, b) => {
+            const numA = parseInt(a.replace('Q', ''));
+            const numB = parseInt(b.replace('Q', ''));
+            return numB - numA;
+        });
+    });
+    
+    return grouped;
+}
+
+/**
+ * Get sorted years (descending - newest first)
+ */
+function getSortedYears(groupedQuarters) {
+    return Object.keys(groupedQuarters).sort((a, b) => parseInt(b) - parseInt(a));
+}
+
+/**
+ * Generate company initials for avatar
+ */
+function getInitials(name) {
+    return name
+        .split(' ')
+        .slice(0, 2)
+        .map(word => word.charAt(0))
+        .join('')
+        .toUpperCase();
+}
+
+/**
+ * Generate a consistent color based on company name
+ */
+function getCompanyColor(slug) {
+    const colors = [
+        { bg: 'bg-indigo-50', text: 'text-indigo-600', border: 'hover:border-indigo-200', ring: 'focus:ring-indigo-500' },
+        { bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'hover:border-emerald-200', ring: 'focus:ring-emerald-500' },
+        { bg: 'bg-violet-50', text: 'text-violet-600', border: 'hover:border-violet-200', ring: 'focus:ring-violet-500' },
+        { bg: 'bg-amber-50', text: 'text-amber-600', border: 'hover:border-amber-200', ring: 'focus:ring-amber-500' },
+        { bg: 'bg-rose-50', text: 'text-rose-600', border: 'hover:border-rose-200', ring: 'focus:ring-rose-500' },
+        { bg: 'bg-cyan-50', text: 'text-cyan-600', border: 'hover:border-cyan-200', ring: 'focus:ring-cyan-500' },
+        { bg: 'bg-fuchsia-50', text: 'text-fuchsia-600', border: 'hover:border-fuchsia-200', ring: 'focus:ring-fuchsia-500' },
+        { bg: 'bg-teal-50', text: 'text-teal-600', border: 'hover:border-teal-200', ring: 'focus:ring-teal-500' }
+    ];
+    
+    let hash = 0;
+    for (let i = 0; i < slug.length; i++) {
+        hash = ((hash << 5) - hash) + slug.charCodeAt(i);
+        hash = hash & hash;
+    }
+    
+    return colors[Math.abs(hash) % colors.length];
+}
+
+/**
+ * Create company card HTML
+ */
+function createCompanyCard(slug, quarters) {
+    const name = formatCompanyName(slug);
+    const initials = getInitials(name);
+    const color = getCompanyColor(slug);
+    const groupedQuarters = groupQuartersByYear(quarters);
+    const sortedYears = getSortedYears(groupedQuarters);
+    const totalQuarters = quarters.length;
+    
+    const card = document.createElement('div');
+    // Cupertino Clean Card Style - Updated with Slate
+    card.className = 'bg-white rounded-3xl p-5 shadow-sm border border-slate-200/60 hover:shadow-md transition-all hover:-translate-y-1 duration-300';
+    
+    // Generate quarters HTML stacked by year
+    let quartersHtml = '';
+    sortedYears.forEach(year => {
+        quartersHtml += `<div class="mb-4 last:mb-0">`;
+        quartersHtml += `<div class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">${year}</div>`;
+        quartersHtml += `<div class="flex flex-wrap gap-2">`;
+        
+        groupedQuarters[year].forEach(q => {
+            quartersHtml += `
+                <a href="companies/${slug}/concalls/${year}-${q}.html" 
+                   class="bg-slate-50 px-3 py-2 rounded-lg border border-slate-100 shadow-sm cursor-pointer ${color.border} hover:bg-white transition-all group flex items-center gap-2">
+                    <span class="font-semibold text-sm text-slate-700 group-hover:${color.text}">${q}</span>
+                </a>
+            `;
+        });
+        
+        quartersHtml += `</div></div>`;
+    });
+
+    card.innerHTML = `
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 ${color.bg} ${color.text} rounded-2xl flex items-center justify-center text-xl font-semibold">
+                    ${initials}
+                </div>
+                <div>
+                    <h3 class="text-slate-900 font-semibold text-lg leading-tight">${name}</h3>
+                    <p class="text-slate-500 text-sm mt-1">${totalQuarters} Report${totalQuarters !== 1 ? 's' : ''}</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl">
+            <h4 class="text-sm font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                Concall Insights
+            </h4>
+            <div class="space-y-2">
+                ${quartersHtml}
+            </div>
+        </div>
+    `;
+    
+    return card;
+}
+
+/**
+ * Render companies based on current search filter
+ */
+function renderCompanies(searchTerm = '') {
+    const grid = document.getElementById('companyGrid');
+    const noResults = document.getElementById('noResults');
+    const loadingState = document.getElementById('loadingState');
+    const companyCount = document.getElementById('companyCount');
+    
+    // Hide loading
+    loadingState.classList.add('hidden');
+    
+    // Filter companies
+    const filteredCompanies = companies.filter(company => {
+        const name = formatCompanyName(company.slug).toLowerCase();
+        return name.includes(searchTerm.toLowerCase());
+    });
+    
+    // Update count
+    companyCount.textContent = `${filteredCompanies.length} ${filteredCompanies.length === 1 ? 'company' : 'companies'} listed`;
+    
+    // Clear grid
+    grid.innerHTML = '';
+    
+    if (filteredCompanies.length === 0) {
+        noResults.classList.remove('hidden');
+        return;
+    }
+    
+    noResults.classList.add('hidden');
+    
+    // Render cards
+    filteredCompanies.forEach(company => {
+        const card = createCompanyCard(company.slug, company.quarters);
+        grid.appendChild(card);
+    });
+}
+
+/**
+ * Initialize app with embedded company data
+ */
+function init() {
+    // Convert manifest to array format
+    companies = Object.entries(MANIFEST_DATA).map(([slug, quarters]) => ({
+        slug,
+        quarters
+    }));
+    
+    // Sort companies alphabetically by formatted name
+    companies.sort((a, b) => {
+        const nameA = formatCompanyName(a.slug);
+        const nameB = formatCompanyName(b.slug);
+        return nameA.localeCompare(nameB);
+    });
+    
+    // Initial render
+    renderCompanies();
+    
+    // Set up search
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+        renderCompanies(e.target.value);
+    });
+}
+
+// Initialize on DOM ready
+document.addEventListener('DOMContentLoaded', init);
