@@ -122,7 +122,7 @@ function createCompanyCard(slug, quarters) {
     
     const card = document.createElement('div');
     // Cupertino Clean Card Style - Updated with Slate
-    card.className = 'bg-white rounded-3xl p-5 shadow-sm border border-slate-200/60 hover:shadow-md transition-all hover:-translate-y-1 duration-300';
+    card.className = 'bg-white rounded-3xl p-5 shadow-sm border border-slate-200/60 hover:shadow-md transition-all hover:-translate-y-1 duration-300 h-full flex flex-col';
     
     // Generate quarters HTML stacked by year
     let quartersHtml = '';
@@ -145,19 +145,21 @@ function createCompanyCard(slug, quarters) {
 
     card.innerHTML = `
         <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-4">
-                <div class="w-14 h-14 ${color.bg} ${color.text} rounded-2xl flex items-center justify-center text-xl font-semibold">
+            <div class="flex items-center gap-4 w-full">
+                <div class="w-14 h-14 ${color.bg} ${color.text} rounded-2xl flex items-center justify-center text-xl font-semibold flex-shrink-0">
                     ${initials}
                 </div>
-                <div>
-                    <h3 class="text-slate-900 font-semibold text-lg leading-tight">${name}</h3>
+                <div class="flex-1 min-w-0">
+                    <div class="h-14 flex items-center">
+                        <h3 class="text-slate-900 font-semibold text-lg leading-tight line-clamp-2 w-full" title="${name}">${name}</h3>
+                    </div>
                     <p class="text-slate-500 text-sm mt-1">${totalQuarters} Report${totalQuarters !== 1 ? 's' : ''}</p>
                 </div>
             </div>
         </div>
         
-        <div class="bg-white rounded-2xl">
-            <h4 class="text-sm font-semibold text-slate-900 mb-4 flex items-center gap-2">
+        <div class="bg-white rounded-2xl flex-grow">
+            <h4 class="text-sm font-semibold text-slate-900 mb-4 flex items-center gap-2 border-b border-slate-100 pb-2">
                 <svg class="w-4 h-4 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 Concall Insights
             </h4>
