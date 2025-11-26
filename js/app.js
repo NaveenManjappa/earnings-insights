@@ -209,11 +209,11 @@ function renderCompanies(searchTerm = '') {
 }
 
 /**
- * Initialize app with embedded company data
+ * Initialize app logic once data is available
  */
-function init() {
+function initializeApp() {
     // Convert manifest to array format
-    companies = Object.entries(MANIFEST_DATA).map(([slug, quarters]) => ({
+    companies = Object.entries(window.MANIFEST_DATA).map(([slug, quarters]) => ({
         slug,
         quarters
     }));
@@ -233,6 +233,34 @@ function init() {
     searchInput.addEventListener('input', (e) => {
         renderCompanies(e.target.value);
     });
+}
+
+/**
+ * Initialize app with embedded company data
+ */
+function init() {
+    // Check if manifest data is loaded
+    if (typeof window.MANIFEST_DATA !== 'undefined') {
+        initializeApp();
+        return;
+    }
+
+    // Poll for data
+    let attempts = 0;
+    const maxAttempts = 100; // 5 seconds
+    const interval = setInterval(() => {
+        if (typeof window.MANIFEST_DATA !== 'undefined') {
+            clearInterval(interval);
+            initializeApp();
+        } else {
+            attempts++;
+            if (attempts >= maxAttempts) {
+                clearInterval(interval);
+                console.error('MANIFEST_DATA not found. Please ensure js/manifest.js is generated and loaded.');
+                document.getElementById('loadingState').innerHTML = '<p class="text-red-500">Error loading company data.</p>';
+            }
+        }
+    }, 100);
 }
 
 // Initialize on DOM ready
