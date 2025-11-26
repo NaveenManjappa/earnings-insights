@@ -24,7 +24,12 @@
         line-height: 1.7;
         font-size: 1.05rem;
       }
-    </style>
+    
+      .scrollbar-thin::-webkit-scrollbar { width: 6px; }
+      .scrollbar-thin::-webkit-scrollbar-track { background: #f1f5f9; }
+      .scrollbar-thin::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+      .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+            </style>
   </head>
   <body class="bg-slate-50 h-screen flex flex-col md:flex-row overflow-hidden">
     <!-- LEFT PANEL: Transcript (60%) -->
@@ -63,20 +68,15 @@
       </div>
 
       <!-- Scrollable Content -->
-      <div
-        class="flex-1 overflow-y-auto p-6 space-y-8 pb-20"
-        id="transcript-container"
-      >
-        <!-- Opening -->
-        <div class="space-y-2">
-          <div class="flex items-baseline space-x-2">
-            <span
-              class="font-bold text-indigo-700 uppercase text-xs tracking-wider"
-              >Moderator</span
-            >
-          </div>
-          <p class="text-slate-700 transcript-text">
-            Good evening everyone, on behalf of the company, I would like to
+      <div class="flex-1 overflow-y-auto p-8 space-y-8 pb-20 scrollbar-thin" id="transcript-container">
+
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Good evening everyone, on behalf of the company, I would like to
             welcome you all to Aurionpro Solutions Limited Earnings Conference
             Call for Q2 and H1 FY'26. Today on this call, we have with us from
             the Management, Mr. Ashish Rai - Vice Chairman and Group CEO, Mr.
@@ -84,20 +84,17 @@
             Secretary.
             <br /><br />
             I would like to now hand over the call to Mr. Ashish Rai for his
-            opening remarks. Thank you and over to you, sir.
-          </p>
-        </div>
-
-        <div class="space-y-2">
-          <div class="flex items-baseline space-x-2">
-            <span
-              class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-              >Ashish Rai</span
-            >
-            <span class="text-xs text-slate-400">Group CEO</span>
-          </div>
-          <p class="text-slate-700 transcript-text">
-            Thank you. Thanks and good afternoon, everyone. Thank you for
+            opening remarks. Thank you and over to you, sir.</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Thank you. Thanks and good afternoon, everyone. Thank you for
             joining us on this call for Q2 and H1 Earnings.
             <br /><br />
             This quarter was another strong step forward for Aurionpro. Revenue
@@ -180,45 +177,42 @@
             into market expansions, and in applications, in the data center and
             AI spaces, while maintaining our financial discipline and
             operational rigor. With that, I will hand this back and let us bring
-            on the questions. Thank you.
-          </p>
-        </div>
-
-        <!-- Q&A Section -->
-        <div class="py-4 border-t border-slate-200">
-          <h3
-            class="text-sm font-semibold text-slate-500 uppercase tracking-widest mb-4"
-          >
-            Question & Answer Session
-          </h3>
-        </div>
-
-        <!-- Q1 -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Vinay Menon</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Hello. Hi, sir, congratulations on a great set of numbers. Just a
+            on the questions. Thank you.</p>
+      </div>
+    </div>
+    
+                 <!-- Q&A Divider -->
+                 <div class="relative py-6 mb-8">
+                  <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-slate-200"></div>
+                  </div>
+                  <div class="relative flex justify-center">
+                    <span class="bg-white px-4 text-sm font-semibold text-slate-400 uppercase tracking-wider">Question & Answer</span>
+                  </div>
+                </div>
+                 
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Vinay Menon</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Hello. Hi, sir, congratulations on a great set of numbers. Just a
               few questions from my side. A) in terms of Europe and US, when can
               we start seeing some traction in terms of deal wins and what is
               our strategy there? I think we have hired a lot of people, so how
-              are we shaping up in that region?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Hey, Vinay. Hi. Thanks. So, look, we are already seeing traction
+              are we shaping up in that region?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Hey, Vinay. Hi. Thanks. So, look, we are already seeing traction
               in terms of some initial wins. We have seen traction in terms of
               pipeline build-out, but typically large deals in this business,
               the sales cycle is 12 to 18 months. I think we are six months into
@@ -240,33 +234,31 @@
               build on those differences and the flywheel takes over. So, I
               think we are probably another four quarters away from the flywheel
               fully in operation. But you already started seeing some wins, and
-              I think you will see more as we get towards Q4.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Vinay Menon</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              And on AI, like Arya, I just want to understand, we have three
+              I think you will see more as we get towards Q4.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Vinay Menon</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>And on AI, like Arya, I just want to understand, we have three
               labs set up. So, the focus is to build an AI company within
               Aurionpro, or is banking the only target from an AI perspective? I
-              just want to understand that.
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              So, Arya, there is a reason why we keep Arya as a standalone
+              just want to understand that.</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">So, Arya, there is a reason why we keep Arya as a standalone
               AI-focused business inside Aurionpro. I think if you look at AI
               today, what is it that you are trying to do? I think there are
               three races you're trying to run. One is the AI native
@@ -313,33 +305,31 @@
               space is a lot of noise. There is a lot of bluster. There is a lot
               of claims getting made. I think we intend to sort of focus on more
               net new value that we can add, you know, keep the noise level low.
-              And we will continue to push towards these three.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Vinay Menon</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Okay. And just a few things on the numbers. Our margins are on the
+              And we will continue to push towards these three.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Vinay Menon</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Okay. And just a few things on the numbers. Our margins are on the
               lower band of 20 to 22, which we guide for. So, any operating
               leverage could play out maybe in the next, you know, 4-6 quarters
-              and things like that.
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Look, operating leverage always keeps playing out, right. But the
+              and things like that.</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Look, operating leverage always keeps playing out, right. But the
               scale of our R&D spend also keeps on increasing. So, I have been
               very clear about that. We have no intention of going after EBITDA
               maximization anytime over the next few years. Right. I think that
@@ -354,34 +344,32 @@
               operating leverage comes in and the business becomes more
               profitable, we pour the excess back into the R&D bucket. Right.
               So, the R&D bucket this year is probably Rs. 120 crore, maybe
-              slightly more than that and I think it will continue to increase.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Vinay Menon</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Just one last thing, like our cash flows for H1 were negative and
+              slightly more than that and I think it will continue to increase.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Vinay Menon</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Just one last thing, like our cash flows for H1 were negative and
               last year, also, it was a similar case and we saw great collection
               in H2. So, that is the nature of the business, as we understand.
               And can we expect something similar for this year also? Like we
-              will maintain the OCF EBITDA margin?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Okay, so look, I think on the cash question, it is the same. I
+              will maintain the OCF EBITDA margin?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Okay, so look, I think on the cash question, it is the same. I
               think it is the same situation every year, right? So, like I said,
               it is pretty much the same question every year. But the nature of
               the business is such that we do a lot of deal bookings, you know,
@@ -401,38 +389,33 @@
               out the tax. So, typically collections towards, you know, become
               very strong towards Q4. But middle of the year, while projects are
               getting executed, it is a big peak. But it is the same question
-              and answer every year. Hopefully that answers.
-            </p>
-          </div>
-        </div>
-
-        <!-- Q2 -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Kunal Bajaj</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Hello, good morning. Thanks for the opportunity and
+              and answer every year. Hopefully that answers.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Kunal Bajaj</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Hello, good morning. Thanks for the opportunity and
               congratulations on good set of results, sir. I have a question on
               data center. So, how do we see our data center business growing in
               the next couple of years? Maybe in terms of revenue share, client
               profile, along with the services offered? And what all other
-              agencies are we planning to explore in this ecosystem?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, hi Kunal. Thanks for the question. So, look, data center is
+              agencies are we planning to explore in this ecosystem?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Yes, hi Kunal. Thanks for the question. So, look, data center is
               one of the big bets for us over the last few years. So, four or
               five years back, you see that business was zero for us. It has
               been growing very, very strongly, typically in the range of
@@ -459,33 +442,31 @@
               work on our internal R&D in terms of where we can add net value in
               terms of IP we can build out. So, that is essentially where the
               business is. We feel very, very good about it. It is one of our
-              big bets, and I think it will continue to grow very strongly.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Kunal Bajaj</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Okay. In terms of the overall mix, as in the last call as well,
+              big bets, and I think it will continue to grow very strongly.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Kunal Bajaj</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Okay. In terms of the overall mix, as in the last call as well,
               you have given a hint that it is one third of the TIG business.
               So, are we seeing this mix to change over the next couple of
-              years, maybe, given the high growth?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, so look, I think the challenge is, I think probably it will
+              years, maybe, given the high growth?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Yes, so look, I think the challenge is, I think probably it will
               go up in the mix purely because of the fact that the public sector
               side may come down a little bit. But I think the problem with the
               mix question in terms of high growth businesses is the other parts
@@ -497,32 +478,30 @@
               third, logically, over the next few years. I mean, it is will
               continue to grow strongly. What does that become? Does it become
               half? I do not think so. But I think it will go up above the one
-              third.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Kunal Bajaj</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Got it. Thank you. Another question on the SaaS part. So, how do
+              third.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Kunal Bajaj</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Got it. Thank you. Another question on the SaaS part. So, how do
               we see the SaaS growth in terms of the annuity revenues over the
-              next couple of years?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, so look, I think we actually license most of our software in
+              next couple of years?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Yes, so look, I think we actually license most of our software in
               enterprise form. So, that is why the SaaS thing is a little bit,
               it does not do justice to the portfolio. We normally make large
               software core systems for tier one banks, which is typically goes
@@ -566,38 +545,33 @@
               it for acquisitions. I mean, over the last four odd years since we
               pivoted, we have invested more than a thousand crore behind R&D
               and acquisitions. And that is the beauty of the software business,
-              right? So, it continues to get stronger as we scale it.
-            </p>
-          </div>
-        </div>
-
-        <!-- Q3 -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Varun Gandhi</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, perfect. Hi, Ashish. So, one question would be your employee
+              right? So, it continues to get stronger as we scale it.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Varun Gandhi</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Yes, perfect. Hi, Ashish. So, one question would be your employee
               expenses have risen both on a y-on-y basis as well as a percentage
               of revenue. Now, previous quarter you mentioned that there was a
               large impact due to employee wage hikes. So, my question is, will
               this be the new normal? Or is this just an aberration because of
-              elevated investments in the EMEA region? Number one.
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, so look, employee expenses, they did jump. Overall, I would
+              elevated investments in the EMEA region? Number one.</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Yes, so look, employee expenses, they did jump. Overall, I would
               say Rs. 9 crore - Rs. 10 crore or so. So, I think it is like it
               has gone up. A lot of it is due to sort of absorption of that came
               through some acquisitions, right? So, some of it has gone up
@@ -610,33 +584,31 @@
               next few quarters? I do not think so. So, I think acquisition is
               one of those things where it does go up in chunks when we sort of
               close the acquisition in a quarter. But I think organic growth
-              wise, it will not be that much.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Varun Gandhi</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              You are implying that it should normalize. All right, my next
+              wise, it will not be that much.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Varun Gandhi</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>You are implying that it should normalize. All right, my next
               question would be, could you share any update on your
               conversations with analysts? Like Gartner or Forrester, any new
-              conversations?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Of course. So, look, I think that is a great question.
+              conversations?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Of course. So, look, I think that is a great question.
               Historically, we have not really spent a lot of time with
               analysts. So, it is mostly in the last four to six quarters that
               we have actually had a strong engagement with most of the
@@ -662,31 +634,29 @@
               and more of those as the analyst coverage matures. So, that is a
               top focus for us, especially as we go into Europe and US because,
               you know, what a Chartis thinks or what a Gartner thinks does
-              matter and we have these strengths.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Varun Gandhi</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Actually, I was going to ask you that, because how much do you
-              think the impact would be of these analysts?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              So, look, I think it is like, look, it is not everything, but it
+              matter and we have these strengths.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Varun Gandhi</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Actually, I was going to ask you that, because how much do you
+              think the impact would be of these analysts?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">So, look, I think it is like, look, it is not everything, but it
               is a useful point. And I think the philosophy that we have is head
               to head, a pure platform evaluation for the products that we built
               out over the last three years will win against just about
@@ -703,40 +673,35 @@
               It is not everything, right. But I think it is an important
               decision factor for most buying organizations. And I think we are
               very serious about it. So, you will see more and more of that
-              coverage come out.
-            </p>
-          </div>
-        </div>
-
-        <!-- Q4 -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Sunaina Chhabria</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, sorry. I just had a couple of Internet issues. Thank you for
+              coverage come out.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Sunaina Chhabria</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Yes, sorry. I just had a couple of Internet issues. Thank you for
               the opportunity and congratulations on a good result. I have a
               couple of questions. The first is sort of on the back of what
               somebody else asked relating to the TIG segment. What are you
               seeing the most traction in? Is it data centers? Is it the
               transit? And if you could give us a current breakup of what this
               quarter looked like, whether there was more performance from data
-              centers or more performance from the transit.
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, so look, TIG continues to grow strongly. I think it is like
+              centers or more performance from the transit.</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Yes, so look, TIG continues to grow strongly. I think it is like
               hard to choose, but both transit payments as well as data center
               they grew very strongly in first half of the year. Transit, of
               course, had that huge win with MMRDA, which will probably propel
@@ -748,36 +713,34 @@
               very, very strong. Transit payments is going very strong. And the
               public sector side of it is, I think, as I have explained
               previously before, it is steady and we have scaled it down a
-              little bit. So, overall, that is what I would say on the mix.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Sunaina Chhabria</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Okay. And just my next question is, within the reporting segments
+              little bit. So, overall, that is what I would say on the mix.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Sunaina Chhabria</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Okay. And just my next question is, within the reporting segments
               that are there, the sale of software services, we have seen a bit
               of a sequential downward movement. If you could just speak on that
               a little bit. And if you could comment on what the execution time
               period is for the order book that has been given of about Rs.
               1,500 crore at the end of Q2. What is the execution timeline for
-              this?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              So, okay, two different parts. I think the way to look at the sale
+              this?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">So, okay, two different parts. I think the way to look at the sale
               of software services versus license and equipment, the reason we
               declared it, the way to look at it is more largely what is one-off
               versus what is more of a continuous stream. I think it is
@@ -795,40 +758,35 @@
               80% plus of the order book is typically executable over the next
               five to six quarters. I think that is generally the mixes. There
               will be some 20-odd percent which will sort of go a lot further
-              because there is always a tail to several orders.
-            </p>
-          </div>
-        </div>
-
-        <!-- Q5 -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Deepak Poddar</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Okay. Yes. Hi. Thank you very much sir for taking time off and
+              because there is always a tail to several orders.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Deepak Poddar</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Okay. Yes. Hi. Thank you very much sir for taking time off and
               thank you for this opportunity. So, I just wanted to understand
               first up on the data center part. I mean, just wanted to
               understand what exactly, I mean, what is the scope of work in the
               data center? And apart from that, per megawatt whatever investment
               is being done in data center, so our scope would constitute what
               percentage of the entire investment and what is the margin
-              required in data center? Yes.
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Okay. So, I am not sure if I got the first part of the question
+              required in data center? Yes.</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Okay. So, I am not sure if I got the first part of the question
               correctly, but I thought you said, what do we do in the data
               center space? And then you said, what is the sort of margin
               profile? Look, I think what we do, we run one of the top data
@@ -848,32 +806,30 @@
               products. In the meanwhile, I would say data center is probably
               five or six points below the enterprise margin at the moment. And
               continues to grow at about enterprise levels. I mean, slightly
-              above the enterprise levels at the moment.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Deepak Poddar</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              So, I got confused. So, the margin profile of data center is five
+              above the enterprise levels at the moment.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Deepak Poddar</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>So, I got confused. So, the margin profile of data center is five
               to six percent below the enterprise or I mean below the company
-              level EBITDA margin?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Correct. I think the way to look at it is we have been steadily
+              level EBITDA margin?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Correct. I think the way to look at it is we have been steadily
               investing in that business as well. Plus, it is largely a
               services-led business at the moment, right? So, in many ways, if
               you look at it, any business that we enter initially, we normally
@@ -886,37 +842,35 @@
               build it, and then we go for it, right? So, slowly, we like
               non-linear play that IP allows. So, slowly, any business, we will
               try to productize it. But at the moment, it is largely a
-              services-led business.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Deepak Poddar</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              I understand. And my second question is on your overall growth. I
+              services-led business.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Deepak Poddar</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>I understand. And my second question is on your overall growth. I
               mean, just wanted to understand when we say a 30% kind of growth,
               so what are the growth drivers, I mean, geographically as well as
               segmentally? And how will this growth profile change over next
               year, let us say FY'27? Because you did mention that we are
               stressing more on Europe and US market. So, just wanted to
               understand this trajectory. I mean, what is driving the growth in
-              the current year, and how will this change over the next year?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              So, look, it is not any single year that we have been growing 30%,
+              the current year, and how will this change over the next year?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">So, look, it is not any single year that we have been growing 30%,
               right? I think we basically have grown at something between 30%
               and 35%, 36% over the last four years. So, four years back, we
               pivoted the business away from what was largely a diversified,
@@ -968,32 +922,30 @@
               to expand into markets. We feel very good about where we are in
               Asia. Now the game is, can we become strong in Europe? Can we
               become strong in US, right? So, that is the focus. I do not know
-              if that answers the question, but that is the philosophy anyways.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Deepak Poddar</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes. That perfectly summarizes. And we intend to grow at 30% for
+              if that answers the question, but that is the philosophy anyways.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Deepak Poddar</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Yes. That perfectly summarizes. And we intend to grow at 30% for
               next two, three years. I mean, would that be a right aspiration
-              for us?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Look, I do not know what I do not know, right? I mean, businesses
+              for us?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Look, I do not know what I do not know, right? I mean, businesses
               do not run in a straight line. I think we got good visibility over
               the next four quarters. We intend to grow strongly for the next
               several years. I think we have the business model. I think we have
@@ -1009,59 +961,53 @@
               dollars or $10 billion. But it is a precise number. Four years in
               a row, we have beaten that, right? So, we feel good about the
               trajectory. We feel good about being able to grow for several
-              years.
-            </p>
-          </div>
-        </div>
-
-        <!-- Q6 -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Vaibhav Choudhury</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, hi. Congratulations on a good set of numbers. So, I have two
+              years.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Vaibhav Choudhury</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Yes, hi. Congratulations on a good set of numbers. So, I have two
               questions. One is on AI data center. So, what is the order book
               there? And the second question is the receivables is a bit higher
-              for this quarter. So, can you help me color on this?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Sorry, I did not get the first question, Vaibhav. What did you say
-              about data center?
-            </p>
-          </div>
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Vaibhav Choudhury</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              So, what is the AI data center order book?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Oh, so look, I think it is sort of hard to segregate it at that
+              for this quarter. So, can you help me color on this?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Sorry, I did not get the first question, Vaibhav. What did you say
+              about data center?</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Vaibhav Choudhury</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>So, what is the AI data center order book?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Oh, so look, I think it is sort of hard to segregate it at that
               level, a lot of the AI compute. So, we have got one of the more
               specialized shops. I mean, I think we have published some things
               publicly in the past. You know, the sort of high-performance
@@ -1086,31 +1032,30 @@
               would summarize it. I think in the past, it has been small. We
               have been active participants in designing it, working together
               with IITs, lots of places. We do see that building out as we go.
-              So, that will pick up and I think we will play a key role in it.
-            </p>
-          </div>
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Vaibhav Choudhury</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Got it. My second question is on the receivable parts. So, it
+              So, that will pick up and I think we will play a key role in it.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Vaibhav Choudhury</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Got it. My second question is on the receivable parts. So, it
               seems to be a bit high for this H1. So, can you just throw a
-              little bit light on this?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, so receivables look typically for us, it is usually high at
+              little bit light on this?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Yes, so receivables look typically for us, it is usually high at
               this time of the year for us, right. And I think that is
               understandable, especially because we also had some large orders
               in Q2 that we build out against. Compared to March, of course, it
@@ -1119,39 +1064,34 @@
               110 days. Now it is about 100 days. So, I think it is sort of
               steadily gotten better, sorry better is the wrong usage but in
               terms of where the DSOs are. But overall, this time of the year,
-              they are usually high and they are high.
-            </p>
-          </div>
-        </div>
-
-        <!-- Q7 -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Rohan Advat</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes. Hi Ashish. My first question is on the two-line items in your
+              they are usually high and they are high.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Rohan Advat</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Yes. Hi Ashish. My first question is on the two-line items in your
               balance sheet, which is other intangible assets and intangible
               assets under development. If you could elaborate on what is
               included or what constitutes these two-line items, because I have
               seen growth in them in FY'25 and also in H1 of FY'26. So, how do
               we decide what do we include here versus what we expense in the
-              P&L? If you could just throw your thoughts on this.
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes. So, look, the way we operate is obviously we invest a lot
+              P&L? If you could just throw your thoughts on this.</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Yes. So, look, the way we operate is obviously we invest a lot
               behind product build outs in this business. Like I said, this year
               it is probably clocking something north of at least 25 a quarter,
               if not closer to 30. But most of that goes into our core large
@@ -1188,19 +1128,18 @@
               of building product, right? Product building takes dollars, takes
               effort, and takes like years of patience, which we have in oodles.
               And that is why for the larger products, there is basically no
-              capitalization that we do.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Rohan Advat</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Understood. And my second question is that if I look at the
+              capitalization that we do.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Rohan Advat</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Understood. And my second question is that if I look at the
               segmental breakup between sale of software and sale of equipment.
               And what you said in an earlier answer is that you would look at
               it like what is one-off versus what is recurring. If I look at
@@ -1208,18 +1147,17 @@
               crore to Rs. 207 crore and sale of equipment is up from 84 to 150.
               So, it seems extremely lofty. And if sale of software service is
               largely recurring, it should not have fallen so much. So, am I
-              missing something in my understanding of this?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, so it is like, it is not just software. So, there is a lot of
+              missing something in my understanding of this?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Yes, so it is like, it is not just software. So, there is a lot of
               services in there, which basically is the size of the projects
               that we do, right? So, a lot of the skew that you see in Q2, for
               example, one single project, which is MMRDA, which you got started
@@ -1242,22 +1180,18 @@
               not there. So, you know, it is not like a SaaS style subscription
               revenue, which you say, okay, how does it vary so much? I mean,
               some of it is like 20% of it is probably recurring or maybe 25,
-              but not all of it.
-            </p>
-          </div>
-        </div>
-
-        <!-- Q8 -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Jalaj Manocha</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              First of all, sir, congrats on a good set of numbers and the
+              but not all of it.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Jalaj Manocha</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>First of all, sir, congrats on a good set of numbers and the
               continuous momentum. I just wanted to have a view around if I were
               to break down the Banking and the FinTech business unit or the
               vertical as we reported. Could you give some directional view
@@ -1268,18 +1202,17 @@
               investing on. So, some direction there or some flavor would be
               helpful. And rather a request would be if we reach to a sizable
               amount or a sizable quantum of business in both the businesses
-              separately. We could report them separately also.
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes. So, longer run, you are totally correct. I think we will
+              separately. We could report them separately also.</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Yes. So, longer run, you are totally correct. I think we will
               probably at some point start reporting the businesses separately.
               FinTech, again, you are correct. I think the banking side of it is
               the larger platforms around lending, transaction banking that we
@@ -1319,61 +1252,57 @@
               especially in terms of new market push that we are seeing in
               Europe as well as in Middle East and Africa. So, I think that is
               how I would sort of summarize it. I hope that answers the
-              question.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Jalaj Manocha</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Could you give me some, yes, that answers. Could you give me some
+              question.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Jalaj Manocha</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Could you give me some, yes, that answers. Could you give me some
               sort of quantitative flavor to it also? What sorts of size would
-              we have reached here?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              I think it is north of 30% of the overall Banking and FinTech pie.
+              we have reached here?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">I think it is north of 30% of the overall Banking and FinTech pie.
               I would not be able to give you a specific number. Plus, yes. A
               lot of the new growth is getting driven from it and actually a lot
-              of the new future growth will get driven there.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Jalaj Manocha</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Understood. Got it. And so, my second question was around the TIG,
+              of the new future growth will get driven there.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Jalaj Manocha</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Understood. Got it. And so, my second question was around the TIG,
               what we had been trying to sell it across or outside India. So,
               have you had any success there and how are things shaping up there
-              specifically?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              So, outside of India, the primary solution line that goes out is
+              specifically?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">So, outside of India, the primary solution line that goes out is
               the smart mobility transit payment side. That is where I think we
               are enormously successful, right? So, I think the transit payment
               side is almost 50 and 50. Of course, now we won some large deals
@@ -1415,36 +1344,34 @@
               profile of the business keeps getting better every year, right?
               So, I think this is in the long run going to be a key powerhouse
               of growth for Aurionpro, and we intend to be one of the bigger
-              players around globally, and we will continue to push towards it.
-            </p>
-          </div>
-
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Jalaj Manocha</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Understood, sir. And one last question quickly. Specifically in
+              players around globally, and we will continue to push towards it.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Jalaj Manocha</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Understood, sir. And one last question quickly. Specifically in
               the businesses, we have one of the projects, we have one in TIG,
               which is the MMRDA or the metro lines. Sorry, I am hopping up on
               the same question again, but what sort of margin profile are we
               seeing there? Or if you do not want to talk about that ROC profile
               something, because the receivables are usually higher in these
-              businesses.
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              No, they are not higher in the transit business. I do not agree
+              businesses.</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">No, they are not higher in the transit business. I do not agree
               with that. I think it is like, so transit is a beautiful business.
               So, now with the, with our own, we own every point on the value
               chain now. We even down to having our own manufacturing in this,
@@ -1471,22 +1398,18 @@
               We are very selective in the deals that we take on. We have one of
               the most competitive stacks out there, at least in India and I
               think we will only take on business where we feel confident of the
-              economic profile.
-            </p>
-          </div>
-        </div>
-
-        <!-- Q9 -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Devashish</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Hey Ashish, this is Debashish. Thank you so much for taking our
+              economic profile.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Devashish</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Hey Ashish, this is Debashish. Thank you so much for taking our
               question. So, just one follow up question, what Jalaj just asked.
               As far as I understand that in case of TIG is concerned, we are
               the most kind of end to end integrated player where we have the
@@ -1498,18 +1421,17 @@
               competition in India and give us some sense, because what I
               understand initially in your Lucknow projects in metro and all,
               you were not able to take out a very significant margin. So, how
-              those things have changed in the recent times?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Yes, so look, I think it is important to understand how we sort of
+              those things have changed in the recent times?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Yes, so look, I think it is important to understand how we sort of
               get in the business. So, if you go back to some of the initial
               deals that we did, right? I mean, one, we said we want to bet on
               the transit payments as a space, right? Why do we want to do it?
@@ -1539,35 +1461,29 @@
               partner for everyone because we can do the whole chain, we can do
               parts of the chain, and we can do all of them efficiently. So,
               that is why for the larger products, there is basically no
-              capitalization that we do.
-            </p>
-          </div>
-        </div>
-
-        <!-- Q10 -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-slate-900 uppercase text-xs tracking-wider"
-                >Hanishi Shah</span
-              >
-              <span class="text-xs text-slate-400">Reading Chat</span>
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Hi. The question is, what is your opinion about AI as a standalone
-              opportunity?
-            </p>
-          </div>
-          <div class="space-y-2 pl-4 border-l-2 border-indigo-100">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              So, look, I think AI, like I said, as a standalone opportunity, it
+              capitalization that we do.</p>
+      </div>
+    </div>
+    
+    <!-- Analyst -->
+    <div class="border-l-2 border-blue-400 pl-5 bg-blue-50/50 -ml-5 py-4 pr-4 rounded-r-lg mb-8">
+      <div class="flex items-center gap-3 mb-3 ml-5">
+        <span class="text-base font-bold text-slate-900">Hanishi Shah</span>
+        <span class="text-xs text-blue-600 font-medium">Analyst</span>
+      </div>
+      <div class="text-slate-700 leading-[1.85] text-[15px] ml-5 space-y-4">
+        <p>Hi. The question is, what is your opinion about AI as a standalone
+              opportunity?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">So, look, I think AI, like I said, as a standalone opportunity, it
               is pretty large. So, there are three ways we are playing that
               game. And I said, one is the AI native applications. Application,
               if you look at history of any technology, as the technology
@@ -1612,22 +1528,17 @@
               independent races. You do not need to win both of them to be very,
               very large. But we intend to run both of them with very, very
               strong, building a very strong set of assets and play that. Does
-              it make sense?
-            </p>
-          </div>
-        </div>
-
-        <!-- Closing -->
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <div class="flex items-baseline space-x-2">
-              <span
-                class="font-bold text-indigo-800 uppercase text-xs tracking-wider"
-                >Ashish Rai</span
-              >
-            </div>
-            <p class="text-slate-700 transcript-text">
-              Thanks, everyone, for joining this call. We will come together
+              it make sense?</p>
+      </div>
+    </div>
+    
+    <!-- Moderator -->
+    <div class="border-l-2 border-slate-300 pl-5 mb-8">
+      <div class="flex items-center gap-2 mb-2">
+        <span class="text-sm font-semibold text-slate-500">Moderator</span>
+      </div>
+      <div class="text-slate-600 leading-[1.85] text-[15px]">
+        <p class="text-slate-600 leading-[1.85] text-[15px] mb-4">Thanks, everyone, for joining this call. We will come together
               again next quarter and we will share where the business is. Four
               years back when we started this pivot, there were a set of hard
               choices to make. I think we made the hard choices. I think we have
@@ -1638,11 +1549,11 @@
               enterprise. We will methodically go about building the set of
               assets as well as the applications and we will play the game to
               win. Thank you for taking time to join us today and we will meet
-              again next quarter. Thank you.
-            </p>
-          </div>
-        </div>
+              again next quarter. Thank you.</p>
       </div>
+    </div>
+    
+</div>
     </div>
 
     <!-- RIGHT PANEL: Analysis (40%) -->
